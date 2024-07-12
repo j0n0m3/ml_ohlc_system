@@ -1,8 +1,8 @@
-# trade producer service
+#producer service
 ## what does service do?
 first step of feature pipeline. this microservice:
 
-- reads trade events from kraken ws api
+- reads events from kraken ws api
 - saves into kafka topic
 
 ## how to run service

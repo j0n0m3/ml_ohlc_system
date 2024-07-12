@@ -3,8 +3,9 @@ from typing import Dict, List
 from kraken_api import KrakenWebsocketTradeAPI
 from loguru import logger
 from quixstreams import Application
-from src import config
-
+# from src import config
+from src.config import config
+from src.kraken_api import KrakenWebsocketTradeAPI
 
 def produce_trades(
     kafka_broker_address: str,
