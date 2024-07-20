@@ -7,10 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.12,<3.13"
-quixstreams = "^2.7.0"
-pydantic-settings = "^2.3.4"
-python-dotenv = "^1.0.1"
+quixstreams = "^2.8.0"
 loguru = "^0.7.2"
+hopsworks = "^3.7.0"
+python-dotenv = "^1.0.1"
+pydantic-settings = "^2.3.4"
+
 
 [build-system]
 requires = ["poetry-core"]

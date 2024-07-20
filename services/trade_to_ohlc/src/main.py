@@ -22,7 +22,7 @@ def trade_to_ohlc(
         None
     """
 
-    # hands all low level comms with kafka
+    # handles all low level comms with kafka
     app = Application(
         broker_address=kafka_broker_address,
         consumer_group="trade_to_ohlc",
