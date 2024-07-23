@@ -3,3 +3,10 @@ start-redpanda:
 
 stop-redpanda:
 	docker compose -f redpanda.yml down
+
+# feature pipeline cmds when running with live data
+run-feature-pipeline:
+	docker compose -f feature_pipeline.yml up -d
+
+stop-feature-pipeline:
+	docker compose -f feature_pipeline.yml down

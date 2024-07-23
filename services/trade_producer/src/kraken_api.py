@@ -8,32 +8,39 @@ from websocket import create_connection
 class KrakenWebsocketTradeAPI:
     URL = 'wss://ws.kraken.com/v2'
 
-    def __init__(self, product_id: str):
-        self.product_id = product_id
+    def __init__(
+        self, 
+        product_ids: List[str],
+    ):
+        self.product_ids = product_ids
 
         # establish connection to kraken ws api
         self._ws = create_connection(self.URL)
         logger.info('connection established')
 
         # subscribe to trades for given product_id
-        self.subscribe(product_id)
+        self.subscribe(product_ids)
 
-    def subscribe(self, product_id: str):
+    def subscribe(self, product_ids: List[str]):
         """
         Establish connection to kraken ws api and subscribe to trades for given product_id
         """
-        logger.info(f'subscribing to trades for {product_id}')
+        logger.info(f'subscribing to trades for {product_ids}')
         # subscribe to trades for given 'product_id'
         msg = {
             'method': 'subscribe',
-            'params': {'channel': 'trade', 'symbol': [product_id], 'snapshot': False},
+            'params': {
+                'channel': 'trade', 
+                'symbol': product_ids, 
+                'snapshot': False},
         }
         self._ws.send(json.dumps(msg))
         logger.info('subscribed')
 
         # dumping first two messages from ws api. contains no trade data, only connection confirmation
-        _ = self._ws.recv()
-        _ = self._ws.recv()
+        for product_id in product_ids:
+            _ = self._ws.recv()
+            _ = self._ws.recv()
 
     def get_trades(self) -> List[Dict]:
         # mock_trades = [
@@ -65,7 +72,7 @@ class KrakenWebsocketTradeAPI:
         for trade in message['data']:
             trades.append(
                 {
-                    'product_id': self.product_id,
+                    'product_id': trade['symbol'],
                     'price': trade['price'],
                     'volume': trade['qty'],
                     'timestamp': trade['timestamp'],
@@ -73,4 +80,5 @@ class KrakenWebsocketTradeAPI:
             )
 
         # breakpoint()
+        
         return trades
