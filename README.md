@@ -1,6 +1,6 @@
-## ml_price_pedict
+## ml_price_predict
 
-### real-time ML system that predicts future short term prices
+### real-time ML system predicting short-term prices
 -> data
 <br> -> feature pipeline => feature store
 <br> -> training pipeline => experiment tracker & model registry
