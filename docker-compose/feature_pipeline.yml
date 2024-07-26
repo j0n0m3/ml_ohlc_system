@@ -23,7 +23,7 @@ services:
       - redpanda_network
     environment:
       KAFKA_BROKER_ADDRESS: redpanda-0:9092
-      OHLC_WINDOW_SECONDS: 60
+      OHLC_WINDOW_SECONDS: 10
 
   kafka_to_feature_store:
     container_name: kafka_to_feature_store

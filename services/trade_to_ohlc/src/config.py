@@ -7,9 +7,9 @@ load_dotenv(find_dotenv())
 from pydantic_settings import BaseSettings
 
 class Config(BaseSettings):
-    kafka_broker_address: str = os.environ['KAFKA_BROKER_ADDRESS']
+    kafka_broker_address: str = 'localhost:19092'
     kafka_input_topic: str = 'trade'
     kafka_output_topic: str = 'ohlc'
-    ohlc_window_seconds: int = os.environ['OHLC_WINDOW_SECONDS']
+    ohlc_window_seconds: int
 
 config = Config()

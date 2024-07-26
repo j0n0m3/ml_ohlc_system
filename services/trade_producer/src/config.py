@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 load_dotenv(find_dotenv())
 
 class Config(BaseSettings):
-    kafka_broker_address: str = os.environ['KAFKA_BROKER_ADDRESS']
+    kafka_broker_address: str = 'localhost:19092'
     kafka_topic_name: str = 'trade'
     product_ids: List[str] = [
         'ETH/USD',
@@ -18,5 +18,7 @@ class Config(BaseSettings):
         # 'SOL/USD',
     ]
 
+    live_or_historical: str = 'live'
+    last_n_days: int = 7
 
 config = Config()

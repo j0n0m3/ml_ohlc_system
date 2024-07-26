@@ -11,7 +11,9 @@ class Config(BaseSettings):
     kafka_topic: str
     feature_group_name: str
     feature_group_version: int
-    hopsworks_project_name: str = os.environ['HOPSWORKS_PROJECT_NAME']
-    hopsworks_api_key: str = os.environ['HOPSWORKS_API_KEY']
+
+    #auth with hopsworks
+    hopsworks_project_name: str
+    hopsworks_api_key: str
 
 config = Config()

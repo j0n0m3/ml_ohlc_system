@@ -82,3 +82,7 @@ class KrakenWebsocketTradeAPI:
         # breakpoint()
         
         return trades
+
+    def is_done(self) -> bool:
+        # websocket never stops fetching
+        return False
