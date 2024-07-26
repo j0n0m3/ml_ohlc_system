@@ -1,7 +1,10 @@
 ## ml system predicting short-term prices
 
-### feature pipeline
+### feature pipeline services:
 ####    trade_producer (producer)
 ####    trade_to_ohlc (transformer)
 ####    kafka_to_feature_store (consumer)
-####    ws api = live, rest api = backfill
+
+### data
+####    ws api = live
+####    rest api = backfill
