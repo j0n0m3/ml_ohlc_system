@@ -1,4 +1,4 @@
-## ml system to predict future value
+## ml system to predict prices
 
 ### feature pipeline services:
 - trade_producer (producer)
