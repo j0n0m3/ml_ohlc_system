@@ -1,4 +1,4 @@
-## ML - Predict Price Model
+## ML - Predict Future Value Model
 
 ### real-time ML system predicting future prices
 -> data
