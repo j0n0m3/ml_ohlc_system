@@ -1,4 +1,4 @@
-## ml_price_predict
+## ml_price_model
 
 ### real-time ML system predicting future prices
 -> data
