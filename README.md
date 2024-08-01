@@ -4,7 +4,7 @@
 -> data
 <br> -> feature pipeline => feature store
 <br> -> training pipeline => experiment tracker & model registry
-<br> -> inference pipeline => price predict
+<br> -> inference pipeline => predict price
 
 #### data:
 - ws api = live
